@@ -1,5 +1,4 @@
 import numpy as __np__
-from unwrap import unwrap as __unwrap__
 
 v = lambda x: __np__.arctan2(__np__.sin(x), __np__.cos(x))
 wrap_diff = lambda x: v(__np__.diff(x))
@@ -112,13 +111,7 @@ def unwrap2D(wraped_phase,type="boundary",noise = True):
 		return ph
 
 	elif noise == True:
-		ph1 = wraped_phase[0]
-		M = wraped_phase[1]
-		s = wraped_phase[2]
-		ph = __unwrap__(ph1,wrap_around_axis_0=False,\
-							wrap_around_axis_1=False,\
-							wrap_around_axis_2=False)
-		return ph
+                raise NotImplementedError
 
 	else:
 		print("No this type of unwrap algorithm")
